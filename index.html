@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo Panels</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="panels">
+		<div class="panel panel1">
+			<p>Never</p>
+			<p>Give</p>
+			<p>up</p>
+		</div>
+		<div class="panel panel2">
+			<p>Success</p>
+			<p>is</p>
+			<p>yours</p>
+		</div>
+		<div class="panel panel3">
+			<p>Aspire</p>
+			<p>to</p>
+			<p>Inspire</p>
+		</div>
+		<div class="panel panel4">
+			<p>Dare</p>
+			<p>to</p>
+			<p>Begin</p>
+		</div>
+		<div class="panel panel5">
+			<p>Now</p>
+			<p>or</p>
+			<p>Never</p>
+		</div>
+		
+	</div>
+
+<script>
+	const panels = document.querySelectorAll(".panel");
+
+	function toggleOpen(){
+		this.classList.toggle('open');
+	}
+
+	function toggleActive(e){
+		console.log(e.propertyName);
+		if (e.propertyName.includes("flex")){
+			this.classList.toggle('open-active');
+		}
+	}
+
+	panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+
+	panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+</script>
+</body>
+</html>
